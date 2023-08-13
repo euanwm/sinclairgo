@@ -1,6 +1,7 @@
 package sinclairgo
 
 import (
+	"fmt"
 	"testing"
 )
 
@@ -87,4 +88,11 @@ func TestCalcSinclair(t *testing.T) {
 			}
 		})
 	}
+}
+
+func ExampleCalcSinclair() {
+	var coeffs = Coefficients{aCoefficient: AMale2021, bCoefficient: BMale2021}
+	var sinclairScore = CalcSinclair(100.0, 200.0, coeffs)
+	fmt.Println(int(sinclairScore + 0.5))
+	// Output: 229
 }

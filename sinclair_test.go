@@ -19,64 +19,64 @@ func TestCalcSinclair(t *testing.T) {
 		{
 			name: "NormalSinclairMale2017",
 			args: args{bodyweight: 81, liftedTotal: 235, coefficients: Coefficients{
-				aCoefficient: AMale2017,
-				bCoefficient: BMale2017,
+				ACoefficient: AMale2017,
+				BCoefficient: BMale2017,
 			}},
 			expectedSinclair: 285.66986,
 		},
 		{
 			name: "Over500SinclairMale2009",
 			args: args{bodyweight: 160, liftedTotal: 510, coefficients: Coefficients{
-				aCoefficient: AMale2009,
-				bCoefficient: BMale2009,
+				ACoefficient: AMale2009,
+				BCoefficient: BMale2009,
 			}},
 			expectedSinclair: 511.21796,
 		},
 		{
 			name: "NormalSinclairFemale2009",
 			args: args{bodyweight: 81, liftedTotal: 235, coefficients: Coefficients{
-				aCoefficient: AFemale2009,
-				bCoefficient: BFemale2009,
+				ACoefficient: AFemale2009,
+				BCoefficient: BFemale2009,
 			}},
 			expectedSinclair: 256.5641,
 		},
 		{
 			name: "Over500SinclairFemale2017",
 			args: args{bodyweight: 160, liftedTotal: 510, coefficients: Coefficients{
-				aCoefficient: AFemale2017,
-				bCoefficient: BFemale2017,
+				ACoefficient: AFemale2017,
+				BCoefficient: BFemale2017,
 			}},
 			expectedSinclair: 510,
 		},
 		{
 			name: "SuperHeavySinclairMale2013",
 			args: args{bodyweight: 200, liftedTotal: 400, coefficients: Coefficients{
-				aCoefficient: AMale2013,
-				bCoefficient: BMale2013,
+				ACoefficient: AMale2013,
+				BCoefficient: BMale2013,
 			}},
 			expectedSinclair: 400,
 		},
 		{
 			name: "SuperHeavySinclairFemale2013",
 			args: args{bodyweight: 200, liftedTotal: 400, coefficients: Coefficients{
-				aCoefficient: AFemale2013,
-				bCoefficient: BFemale2013,
+				ACoefficient: AFemale2013,
+				BCoefficient: BFemale2013,
 			}},
 			expectedSinclair: 400,
 		},
 		{
 			name: "NormalSinclairMale2021",
 			args: args{bodyweight: 81, liftedTotal: 235, coefficients: Coefficients{
-				aCoefficient: AMale2021,
-				bCoefficient: BMale2021,
+				ACoefficient: AMale2021,
+				BCoefficient: BMale2021,
 			}},
 			expectedSinclair: 298.24963,
 		},
 		{
 			name: "NormalSinclairFemale2021",
 			args: args{bodyweight: 81, liftedTotal: 235, coefficients: Coefficients{
-				aCoefficient: AFemale2021,
-				bCoefficient: BFemale2021,
+				ACoefficient: AFemale2021,
+				BCoefficient: BFemale2021,
 			}},
 			expectedSinclair: 270.42316,
 		},
@@ -91,7 +91,7 @@ func TestCalcSinclair(t *testing.T) {
 }
 
 func ExampleCalcSinclair() {
-	var coeffs = Coefficients{aCoefficient: AMale2021, bCoefficient: BMale2021}
+	var coeffs = Coefficients{ACoefficient: AMale2021, BCoefficient: BMale2021}
 	var sinclairScore = CalcSinclair(100.0, 200.0, coeffs)
 	fmt.Println(int(sinclairScore + 0.5))
 	// Output: 229

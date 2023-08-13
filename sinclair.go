@@ -11,9 +11,8 @@ type Coefficients struct {
 	bCoefficient float64
 }
 
-// CalcSinclair Calculates the sinclair of a result passed to it. We are using ONLY the Senior coefficient because
-// the Masters coefficient is absolute nonsense. You'll see there's a lot of switching between float types.
-// It's frustrating but it serves a purpose.
+// CalcSinclair is a function that calculates the sinclair score for a given bodyweight, lifted total, and coefficients.
+// We recommend using the provided constants for the coefficients within the coeffyears.go file.
 func CalcSinclair[T constraints.Float](bodyweight T, liftedTotal T, coeffs Coefficients) (sinclairScore float64) {
 	if float64(bodyweight) <= coeffs.bCoefficient {
 		var X = math.Log10(float64(bodyweight) / coeffs.bCoefficient)

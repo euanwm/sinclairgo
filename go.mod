@@ -1,4 +1,4 @@
-module sinclairgo
+module github.com/euanwm/sinclairgo
 
 go 1.20
 
